@@ -1,0 +1,11 @@
+{
+  "items": [
+    {"id": "e1", "url": "https://example.com/forum/1", "quote": "Our CI takes 40 minutes on every PR and nobody can fix it.", "source": "forum", "candidate": "faster-ci"},
+    {"id": "e2", "url": "https://example.com/blog/2", "quote": "We split the monorepo pipeline and cut CI time in half.", "source": "web", "candidate": "faster-ci"},
+    {"id": "e3", "url": "https://example.com/issues/3", "quote": "Caching does not survive across runners, so every build starts cold.", "source": "github", "candidate": "faster-ci"},
+    {"id": "e4", "url": "https://example.com/news/4", "quote": "CI minutes are now our third-largest cloud bill.", "source": "news", "candidate": "faster-ci"},
+    {"id": "e5", "url": "https://example.com/forum/5", "quote": "We retry the end-to-end suite three times before anyone looks.", "source": "forum", "candidate": "flaky-tests"},
+    {"id": "e6", "url": "https://example.com/issues/6", "quote": "Quarantining flaky tests hid a real regression for a month.", "source": "github", "candidate": "flaky-tests"},
+    {"id": "e7", "url": "", "quote": "Everyone hates YAML.", "source": "web", "candidate": "yaml-fatigue"}
+  ]
+}
