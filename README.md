@@ -80,4 +80,4 @@ scripts/lint_notes.py      Frontmatter lint for every note (runs in CI)
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).

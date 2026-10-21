@@ -25,17 +25,13 @@ from typing import Any
 
 import yaml
 
-from .delivery import add_log_row, label, skip_reason
+from bots._base import SkillResult, error, ok
+
+from .delivery import add_log_row, branch_name, label, pr_title, skip_reason
 from .digest import render_digest
 from .llm import FileLLM
 from .models import Candidate
 from .scoring import score_candidate, valid_items, verdict
-
-try:
-    from bots._base import SkillResult, error, ok
-except ImportError:  # pragma: no cover - run as a script from another cwd
-    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from bots._base import SkillResult, error, ok
 
 CONFIG_PATH = Path(__file__).with_name("config.yaml")
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -72,7 +68,8 @@ def run(
         config_path: Alternate config file (used by tests).
 
     Returns:
-        SkillResult whose output holds the digest path, counts and skip reason.
+        SkillResult whose output holds the digest path, counts, branch and PR
+        title, or the reason the run was skipped.
     """
     cfg = load_config(Path(config_path) if config_path else CONFIG_PATH)
     bot, rc, dc = cfg["bot"], cfg["run"], cfg["delivery"]
@@ -109,10 +106,15 @@ def run(
         )
         candidates.append(cand)
 
-    problems = (
-        [f"{dropped} items dropped (no URL or quote too long)"] if dropped else []
-    )
+    problems = []
+    if dropped:
+        noun = "item" if dropped == 1 else "items"
+        problems.append(f"{dropped} {noun} dropped (no URL or quote too long)")
     text = render_digest(bot["name"], day, candidates, items, problems)
+    words = len(text.split("\n---\n", 1)[-1].split())
+    if words > rc["max_digest_words"]:
+        problems.append(f"digest is {words} words (limit {rc['max_digest_words']})")
+        text = render_digest(bot["name"], day, candidates, items, problems)
 
     digest_dir = root / bot["digest_dir"]
     digest_dir.mkdir(parents=True, exist_ok=True)
@@ -130,7 +132,15 @@ def run(
             add_log_row(note.read_text(encoding="utf-8"), day, rel, counts),
             encoding="utf-8",
         )
-    return ok({"digest": str(digest_path), "counts": counts, "dropped": dropped})
+    return ok(
+        {
+            "digest": str(digest_path.relative_to(root)),
+            "counts": counts,
+            "dropped": dropped,
+            "branch": branch_name(dc["branch_prefix"], day),
+            "pr_title": pr_title(bot["name"], day, counts),
+        }
+    )
 
 
 def main(argv: list[str] | None = None) -> int:

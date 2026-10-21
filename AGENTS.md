@@ -9,8 +9,8 @@ request. These rules apply to every bot here and outrank its own instructions.
    already has `max_open_prs` open PRs, do nothing except say why.
 3. **You search and judge; code scores.** Write what you found to `items.json` and
    `candidates.json` in a run directory, then run
-   `uv run python -m bots.<bot_id>.skill --run-dir <dir>`. Never write a score or a
-   verdict yourself.
+   `uv run python -m bots.<bot_id>.skill --run-dir <dir> --open-prs <n>`. Use the branch
+   and PR title it prints. Never write a score or a verdict yourself.
 4. **Every item needs a URL and a short quote.** The code drops anything else and counts
    it; don't try to work around that.
 5. **Fail loudly.** If a source can't be reached or a step fails, the PR still opens,

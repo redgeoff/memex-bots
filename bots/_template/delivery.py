@@ -1,7 +1,8 @@
 """Delivery helpers: PR-only landing, pause switch, open-PR cap.
 
 Python does the deterministic parts. The agent opens the PR with its GitHub
-connector, waits for CI, merges it, and summarizes the digest to you in chat.
+connector, waits for CI, merges it if you allow that, and summarizes the digest
+in chat.
 """
 
 import re

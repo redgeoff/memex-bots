@@ -46,7 +46,7 @@ def render_digest(
         lines += [f"## {label}", ""]
         rows = [c for c in candidates if c["verdict"] == key]
         if not rows:
-            lines += ["None this week.", ""]
+            lines += ["None this run.", ""]
         for c in rows:
             links = " ".join(
                 f"[{n}]({i['url']})"
@@ -58,7 +58,7 @@ def render_digest(
         lines.append("")
     dropped = counts["drop"]
     noun = "candidate" if dropped == 1 else "candidates"
-    lines += ["## Dropped this week", "", f"{dropped} {noun}.", ""]
+    lines += ["## Dropped", "", f"{dropped} {noun}.", ""]
     if problems:
         lines += ["## Run problems", ""] + [f"- {p}" for p in problems] + [""]
     return "\n".join(lines)

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
+import yaml
 
 from scripts.lint_notes import check_frontmatter, read_note
 
@@ -92,6 +93,11 @@ def test_run_writes_digest_and_log(repo: Path, run_dir: Path) -> None:
     note = (repo / "knowledge/projects/example-bot.md").read_text()
     assert "example-bot/digest-2026-10-19.md" in note
     assert "updated: 2026-10-19" in note
+    assert result["output"]["branch"] == "example-bot/2026-10-19"
+    assert (
+        result["output"]["pr_title"]
+        == "Example Bot digest 2026-10-19 (1 advance, 0 watch)"
+    )
 
 
 def test_digest_passes_lint_frontmatter(repo: Path, run_dir: Path) -> None:
@@ -128,3 +134,13 @@ def test_branch_and_title_and_log_row_idempotent() -> None:
     once = add_log_row(NOTE, "2026-10-19", "x/digest-2026-10-19.md", counts)
     twice = add_log_row(once, "2026-10-19", "x/digest-2026-10-19.md", counts)
     assert once == twice
+
+
+def test_long_digest_is_flagged(repo: Path, run_dir: Path, tmp_path: Path) -> None:
+    cfg = skill.load_config()
+    cfg["run"]["max_digest_words"] = 10
+    path = tmp_path / "config.yaml"
+    path.write_text(yaml.safe_dump(cfg), encoding="utf-8")
+    skill.run(str(run_dir), "2026-10-19", repo=str(repo), config_path=str(path))
+    digest = repo / "knowledge/projects/example-bot/digest-2026-10-19.md"
+    assert "(limit 10)" in digest.read_text()

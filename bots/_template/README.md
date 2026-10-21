@@ -23,7 +23,7 @@ AI agent's own tools and delivers a short digest to your repo by pull request.
 ## Architecture (hybrid)
 
 ```
-agent routine (its own search/fetch tools + judgement)
+agent routine (its own search/fetch tools + judgment)
         │ writes JSON
         ▼
 <run_dir>/items.json, candidates.json
@@ -32,7 +32,7 @@ agent routine (its own search/fetch tools + judgement)
 skill.py: validate (citation rule) → score (pure code) → verdict → digest → Log row
         │
         ▼
-agent: branch, commit, open PR, wait for CI, merge, summarize to you in chat
+agent: branch, commit, open PR, wait for CI, merge if allowed, summarize in chat
 ```
 
 Rules that make bots safe to leave alone:
@@ -59,8 +59,8 @@ A bot works unattended, so its credentials are its blast radius.
   never an account-wide one, never shared between bots.
 - **Set an expiry** (90 days or less) and record the date and the rotation steps in the
   bot's README. An expired token should fail loudly in the run's "Run problems" section.
-- **Keep the token out of Python and the repo.** The agent's GitHub connector opens and
-  merges the PR; code only does local git. Secrets come from the host's secret store;
+- **Keep the token out of Python and the repo.** The agent's GitHub connector opens (and,
+  if you allow it, merges) the PR; code only does local git. Secrets come from the host's secret store;
   list their names, never their values.
 - **A token that can write contents can push to `main`.** "Never push to `main`" must be
   enforced, not just promised: keep a branch ruleset on `main` that requires a pull

@@ -1,4 +1,4 @@
-# <Bot name> — build spec
+# <Bot name>: build spec
 
 **Status: draft.** Copy this file to `bots/<bot_id>/README.md` and fill in every section. If something is ambiguous, the builder (you or an agent) **asks the owner** rather than guessing, and records the answer here in the same PR. Skeleton and checklist: [`bots/_template/`](../bots/_template/README.md); security rules are in its README.
 
@@ -22,7 +22,7 @@ Numbered, each testable. A violation is a bug. Include the attention budget (min
 
 ## 4. Targets
 
-What it watches: groups, topics, accounts or feeds. Configurable in `config.yaml`, not hard-coded.
+What it watches: topics, sites, accounts or feeds. Configurable in `config.yaml`, not hard-coded.
 
 ## 5. Sources
 
@@ -30,7 +30,7 @@ For each source: how it is reached (agent tool, public API with no key), what co
 
 ## 6. Pipeline
 
-Collect → validate → cluster or dedupe → score → verdict → digest → deliver. Say which steps are agent judgement and which are code.
+Collect → validate → cluster or dedupe → score → verdict → digest → deliver. Say which steps are agent judgment and which are code.
 
 ## 7. Data model
 
@@ -46,7 +46,7 @@ Sections, word limit (default about 600), what the owner must be able to decide 
 
 ## 10. Delivery and hosting
 
-- Branch `<prefix>/YYYY-MM-DD`, one PR per run, never on `main`; merge when CI passes, then summarize in chat.
+- Branch `<prefix>/YYYY-MM-DD`, one PR per run, never on `main`. Say whether the bot may merge its own PR once CI passes, or waits for you.
 - Where the bot is scheduled and hosted, where secrets live, how to rotate keys.
 - Pause: `bots/<bot_id>/PAUSED` on `main`. Cap: `max_open_prs`.
 - Failure handling: partial digest with a "Run problems" section; at most two retries a week.
@@ -61,7 +61,7 @@ When the bot stops running and what it records when it does (one final PR with t
 
 ## 12. Out of scope
 
-Contacting anyone, posting anywhere, drafting outreach, building products, anything outside the criteria above.
+Contacting anyone, posting anywhere, sending from or writing to your accounts, spending money, anything outside the criteria above.
 
 ## 13. Milestones
 

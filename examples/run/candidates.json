@@ -1,7 +1,7 @@
 {
   "candidates": [
-    {"id": "faster-ci", "title": "Teams want faster CI on monorepos"},
-    {"id": "flaky-tests", "title": "Flaky end-to-end tests block releases"},
-    {"id": "yaml-fatigue", "title": "Too much pipeline YAML"}
+    {"id": "faster-ci", "title": "Slow CI on monorepos"},
+    {"id": "flaky-tests", "title": "Flaky end-to-end tests"},
+    {"id": "yaml-fatigue", "title": "Pipeline YAML sprawl"}
   ]
 }

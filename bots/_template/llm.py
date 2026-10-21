@@ -1,7 +1,7 @@
 """LLM adapter (hybrid architecture).
 
 There is no LLM API call in code. The agent routine does the searching and
-judgement with its own tools and writes JSON files into a run directory;
+judgment with its own tools and writes JSON files into a run directory;
 FileLLM serves them so the pipeline and tests stay deterministic and offline.
 """
 

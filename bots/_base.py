@@ -1,10 +1,8 @@
 """Result contract shared by every bot.
 
-Every bot's ``run()`` follows the contract defined here:
-- A module-level `run()` function (or a class with a `run()` method)
-- Returns a SkillResult dict with status, output, and optional error
-
-This module provides type aliases and a helper for building consistent results.
+Every bot's ``skill.py`` has a module-level ``run()`` that returns a SkillResult
+dict with a status, an output and an optional error. This module defines that
+type and the helpers that build it.
 """
 
 from typing import Any, TypedDict
