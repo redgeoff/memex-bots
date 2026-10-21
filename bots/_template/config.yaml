@@ -1,0 +1,16 @@
+# Bot configuration (committed; no secrets). TODO(bot): rename and fill in.
+bot:
+  id: example_bot                 # snake_case; must equal the bots/<id>/ directory name
+  name: Example Bot
+  project_note: knowledge/projects/example-bot.md   # holds the Log table
+  digest_dir: knowledge/projects/example-bot        # digests land here
+run:
+  max_digest_words: 600           # longer digests are flagged in Run problems
+  max_quote_words: 25
+  min_score_advance: 4            # TODO(bot): thresholds for your rubric
+  min_score_watch: 2
+delivery:                         # read by the agent, which opens the PR
+  repo: your-name/your-memex     # TODO(bot): the repo the bot opens PRs against
+  base: main
+  branch_prefix: example-bot/
+  max_open_prs: 3
