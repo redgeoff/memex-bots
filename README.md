@@ -2,6 +2,9 @@
 
 A template for AI bots you can leave running: **every change lands by pull request.**
 
+The story behind it, a bot that reads our kids' school email: [I built an AI bot to read
+our kids' school email. Here's what I'd tell you before you build one.](https://redgeoff.com/posts/school-email-bot/)
+
 A bot here is a scheduled worker. An AI agent wakes it up, does the searching and the
 judgment with its own tools, and hands plain JSON to a small Python pipeline. The
 pipeline checks every claim for a source, scores it with ordinary code, writes a short
