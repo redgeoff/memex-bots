@@ -1,6 +1,6 @@
 ---
-date: 2026-01-01
-updated: 2026-01-01
+date: 2026-11-02
+updated: 2026-11-02
 tags: [context, meta]
 status: active
 summary: "Who you are: background, current focus and the people an AI should know about. Fill this in first."

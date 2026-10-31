@@ -1,6 +1,6 @@
 ---
-date: 2026-01-01
-updated: 2026-01-01
+date: 2026-11-02
+updated: 2026-11-02
 tags: [decisions, meta]
 status: active
 summary: "Log of your rulings on wording, numbers and process; also holds the lint rules that enforce them."
@@ -23,4 +23,4 @@ never by editing the old one.
 
 | # | Date | Decision | Applies to |
 |---|------|----------|------------|
-| D1 | 2026-01-01 | Example: notes use **American spelling**. Backed by an `avoid` rule. | All notes |
+| D1 | 2026-11-02 | Example: notes use **American spelling**. Backed by an `avoid` rule. | All notes |

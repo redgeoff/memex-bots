@@ -1,6 +1,6 @@
 ---
-date: 2026-01-01
-updated: 2026-01-01
+date: 2026-11-02
+updated: 2026-11-02
 tags: [context, meta]
 status: active
 summary: "How you like AIs to work with you: writing style, what to ask before doing, and what never to do."
