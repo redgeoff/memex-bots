@@ -1,6 +1,6 @@
 ---
-date: 2026-01-01
-updated: 2026-10-19
+date: 2026-11-02
+updated: 2026-11-02
 tags: [index, meta, ledger]
 status: active
 summary: Generated map of every note, its sensitivity and last update. Read first.
@@ -22,9 +22,9 @@ Total: 10 notes, about 664 words.
 
 | Note | What it covers | Sensitivity | Updated | Words |
 |------|----------------|-------------|---------|-------|
-| [About Me](../context/ABOUT_ME.md) | Who you are: background, current focus and the people an AI should know about. Fill this in first. | private | 2026-01-01 | 70 |
-| [Goals](../context/GOALS.md) | Your goals for the year and the quarter, so an AI can weigh what matters. | private | 2026-01-01 | 12 |
-| [Preferences](../context/PREFERENCES.md) | How you like AIs to work with you: writing style, what to ask before doing, and what never to do. | private | 2026-01-01 | 120 |
+| [About Me](../context/ABOUT_ME.md) | Who you are: background, current focus and the people an AI should know about. Fill this in first. | private | 2026-11-02 | 70 |
+| [Goals](../context/GOALS.md) | Your goals for the year and the quarter, so an AI can weigh what matters. | private | 2026-11-02 | 12 |
+| [Preferences](../context/PREFERENCES.md) | How you like AIs to work with you: writing style, what to ask before doing, and what never to do. | private | 2026-11-02 | 120 |
 
 ## Projects
 
@@ -37,26 +37,26 @@ Total: 10 notes, about 664 words.
 
 | Note | What it covers | Sensitivity | Updated | Words |
 |------|----------------|-------------|---------|-------|
-| [Roster](people/roster.md) | Roster of people who come up often: one line each. Names in bold are counted by the dream. | private | 2026-01-01 | 50 |
+| [Roster](people/roster.md) | Roster of people who come up often: one line each. Names in bold are counted by the dream. | private | 2026-11-02 | 50 |
 
 ## Reference
 
 | Note | What it covers | Sensitivity | Updated | Words |
 |------|----------------|-------------|---------|-------|
-| [Getting started](reference/getting-started.md) | How to start using this memex: first steps, importing documents and the first dream. | public | 2026-01-01 | 143 |
+| [Getting started](reference/getting-started.md) | How to start using this memex: first steps, importing documents and the first dream. | public | 2026-11-02 | 143 |
 
 ## Sources and ledgers
 
 | Note | What it covers | Sensitivity | Updated | Words |
 |------|----------------|-------------|---------|-------|
-| [Import ledger](sources/import-ledger.md) | Ledger of documents imported into the memex: what was read, what was skipped and why. | private | 2026-01-01 | 18 |
+| [Import ledger](sources/import-ledger.md) | Ledger of documents imported into the memex: what was read, what was skipped and why. | private | 2026-11-02 | 18 |
 
 ## Knowledge (top level)
 
 | Note | What it covers | Sensitivity | Updated | Words |
 |------|----------------|-------------|---------|-------|
-| [Decisions](decisions.md) | Log of your rulings on wording, numbers and process; also holds the lint rules that enforce them. | private | 2026-01-01 | 105 |
+| [Decisions](decisions.md) | Log of your rulings on wording, numbers and process; also holds the lint rules that enforce them. | private | 2026-11-02 | 105 |
 
 ## Daily notes
 
-1 note(s) in [daily/](daily/); newest: 2026-01-01.
+1 note(s) in [daily/](daily/); newest: 2026-11-02.

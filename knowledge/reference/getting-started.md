@@ -1,6 +1,6 @@
 ---
-date: 2026-01-01
-updated: 2026-01-01
+date: 2026-11-02
+updated: 2026-11-02
 tags: [reference, setup]
 status: active
 summary: "How to start using this memex: first steps, importing documents and the first dream."

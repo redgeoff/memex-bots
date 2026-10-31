@@ -10,7 +10,7 @@ from pathlib import Path
 from scripts.utils.memex_notes import Note, load_notes
 
 HEADER = """---
-date: 2026-01-01
+date: 2026-11-02
 updated: {updated}
 tags: [index, meta, ledger]
 status: active

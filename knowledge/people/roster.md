@@ -1,6 +1,6 @@
 ---
-date: 2026-01-01
-updated: 2026-01-01
+date: 2026-11-02
+updated: 2026-11-02
 tags: [people]
 status: active
 summary: "Roster of people who come up often: one line each. Names in bold are counted by the dream."
