@@ -17,7 +17,8 @@ Create a new **bot** from the template. Argument: `$ARGUMENTS`
    - Copy `bots/_template/BOT.md` to `bots/<bot_id>/BOT.md` and fill it in.
 4. Build only milestone 1 (skeleton, tests, `--dry-run`) unless I ask for more. No
    network in tests.
-5. Run `uv run pytest` and `uv run python -m scripts.lint_notes`; fix anything that
+5. Run `uv run python -m skills.dream.skill --fix` (regenerates the index), then
+   `uv run pytest` and `uv run python -m scripts.utils.lint_memex`; fix anything that
    fails.
 6. Open a PR. Merge it yourself once CI passes only if I have said you may; otherwise
    list any open questions in chat, numbered, most important first.

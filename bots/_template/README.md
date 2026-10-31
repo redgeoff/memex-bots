@@ -90,7 +90,7 @@ A bot works unattended, so its credentials are its blast radius.
 - [ ] Spec filled in and its open questions answered (recorded in the spec)
 - [ ] Tests cover the verdict branches, citation rule, PAUSED and PR cap, digest lint and
       Log row, with **no network**
-- [ ] `uv run pytest` and `uv run python -m scripts.lint_notes` pass
+- [ ] `uv run pytest` and `uv run python -m scripts.utils.lint_memex` pass (after `uv run python -m skills.dream.skill --fix`)
 - [ ] The bot's README says how it is scheduled, where secrets live, and how to pause it
 - [ ] `bots/<bot_id>/BOT.md` filled in and kept current by PR
 - [ ] Security section followed; token expiry date recorded

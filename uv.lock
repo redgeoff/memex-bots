@@ -21,7 +21,7 @@ wheels = [
 ]
 
 [[package]]
-name = "memex-bots"
+name = "memex-template"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

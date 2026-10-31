@@ -1,3 +1,4 @@
-Read AGENTS.md before doing anything in this repo. It holds the rules every bot follows.
+@AGENTS.md
 
-To make a new bot, use `/new-bot <name and purpose>`.
+To make a new bot, use `/new-bot <name and purpose>`. To run the cleanup pass, use
+`/dream`.
