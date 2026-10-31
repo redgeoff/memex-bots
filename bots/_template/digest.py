@@ -10,7 +10,9 @@ def render_digest(
     items: list[Item],
     problems: list[str] | None = None,
 ) -> str:
-    """Render one digest as markdown that passes the note lint (scripts/lint_notes.py).
+    """Render one digest as markdown that passes the note lint.
+
+    The lint is scripts/utils/lint_memex.py.
 
     Args:
         bot_name: Human name of the bot.

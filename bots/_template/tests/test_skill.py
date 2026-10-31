@@ -6,7 +6,8 @@ from pathlib import Path
 import pytest
 import yaml
 
-from scripts.lint_notes import check_frontmatter, read_note
+from scripts.utils.lint_memex import check_frontmatter
+from scripts.utils.memex_notes import read_note
 
 from .. import skill
 from ..delivery import add_log_row, branch_name, pr_title, skip_reason
@@ -103,7 +104,7 @@ def test_run_writes_digest_and_log(repo: Path, run_dir: Path) -> None:
 def test_digest_passes_lint_frontmatter(repo: Path, run_dir: Path) -> None:
     skill.run(str(run_dir), "2026-10-19", repo=str(repo))
     path = repo / "knowledge/projects/example-bot/digest-2026-10-19.md"
-    assert check_frontmatter(read_note(path)) == []
+    assert check_frontmatter(read_note(path, repo)) == []
 
 
 def test_paused_file_and_pr_cap_skip_the_run(repo: Path, run_dir: Path) -> None:

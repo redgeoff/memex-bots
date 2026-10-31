@@ -1,7 +1,7 @@
 [project]
-name = "memex-bots"
+name = "memex-template"
 version = "0.1.0"
-description = "A template for AI bots you can leave running: every change lands by pull request."
+description = "A personal memex: one shared memory, in markdown, for every AI you use, plus bots that deliver into it by pull request."
 requires-python = ">=3.11"
 dependencies = [
     "pyyaml>=6.0",
@@ -16,7 +16,7 @@ dev = [
 package = false
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "bots"]
+testpaths = ["scripts/tests", "skills", "bots"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
 

@@ -24,4 +24,4 @@ jobs:
         run: uv run pytest --tb=short
 
       - name: Lint notes
-        run: uv run python -m scripts.lint_notes
+        run: uv run python -m scripts.utils.lint_memex
